@@ -28,7 +28,15 @@ public class Shop {
     }
 
     public void comparePrice(){
-       listProduct.sort(Comparator.comparing(Product :: getPrice));
+        listProduct.sort(new Comparator<Product>() {
+            @Override
+            public int compare(Product o1, Product o2) {
+                return o1.getPrice()- o2.getPrice();
+            }
+        });
+
+
+        //listProduct.sort(Comparator.comparing(Product :: getPrice));
     }
 
     public void sort(){
